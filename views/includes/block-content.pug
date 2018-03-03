@@ -27,7 +27,7 @@ div(class="tab-content")
 
 			tr
 				th(class="table-active properties-header") Timestamp
-				td(class="monospace") #{moment.utc(new Date(result.getblock.time * 1000)).format("Y-MM-DD HH:mm:ss")} (utc)
+				td(class="monospace") #{moment.utc(new Date(result.getblock.time * 1000)).local().format("Y-MM-DD HH:mm:ss")}
 
 			tr
 				th(class="table-active properties-header") Transaction Count
@@ -92,7 +92,7 @@ div(class="tab-content")
 
 					else if (result.getblock.hash == "130df13ce210c921e1f8a1b707fae519ce1427073bc850d794ac010c0ff7a3a5")
 						span N/A - This is the
-						a(href="https://en.bitcoin.it/wiki/Genesis_block") HappyUC Genesis Block
+						a(href="https://en.bitcoin.it/wiki/Genesis_block")  HappyUC Genesis Block
 
 			tr
 				th(class="table-active properties-header") Next Block Hash

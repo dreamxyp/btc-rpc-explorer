@@ -17,7 +17,6 @@ var bitcoin   = require("bitcoin");
 var pug       = require("pug");
 var momentDurationFormat = require("moment-duration-format");
 var baseActionsRouter    = require('./routes/baseActionsRouter');
-
 var app = express();
 
 // view engine setup

@@ -60,7 +60,7 @@ block content
 				tr
 					th(class="table-active properties-header") Timestamp
 					if (result.getrawtransaction.time)
-						td(class="monospace") #{moment.utc(new Date(result.getrawtransaction["time"] * 1000)).format("Y-MM-DD HH:mm:ss")} (utc)
+						td(class="monospace") #{moment.utc(new Date(result.getrawtransaction["time"] * 1000)).local().format("Y-MM-DD HH:mm:ss")}
 					else
 						td(class="monospace") N/A
 							span(class="text-muted")  (unconfirmed)
@@ -96,7 +96,7 @@ block content
 									i(class="fa fa-external-link")
 								span )
 							else
-								span Spendable after #{moment.utc(new Date(result.getrawtransaction.locktime * 1000)).format("Y-MM-DD HH:mm:ss")} (utc) - (
+								span Spendable after #{moment.utc(new Date(result.getrawtransaction.locktime * 1000)).local().format("Y-MM-DD HH:mm:ss")}  - (
 								a(href="https://bitcoin.org/en/developer-guide#locktime-and-sequence-number", title="Locktime documentation")
 									span docs 
 									i(class="fa fa-external-link")

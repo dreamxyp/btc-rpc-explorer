@@ -14,7 +14,7 @@ table(class="table table-striped")
 					th #{(blockIndex + blockOffset + 1).toLocaleString()}
 					td(class="data-cell monospace")
 						a(href=("/block-height/" + block.height)) #{block.height.toLocaleString()}
-					td(class="data-cell monospace") #{moment.utc(new Date(parseInt(block.time) * 1000)).format("Y-MM-DD HH:mm:ss")}
+					td(class="data-cell monospace") #{moment.utc(new Date(parseInt(block.time) * 1000)).local().format("Y-MM-DD HH:mm:ss")}
 
 					- var timeAgo = moment.duration(moment.utc(new Date()).diff(moment.utc(new Date(parseInt(block.time) * 1000))));
 					td(class="data-cell monospace") #{timeAgo.format()}

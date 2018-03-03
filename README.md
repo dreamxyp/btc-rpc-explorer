@@ -34,19 +34,19 @@ I built this tool because I wanted to use it myself. Whatever reasons one might 
 # Screenshots
 
 ### Connect via RPC
-# ![Connect](public/img/screenshots/connect.png)
+# ![Connect](public/img/screenshots/connect.jpg)
 
 ### Homepage (list of recent blocks)
-# ![Connect](public/img/screenshots/home.png)
+# ![Connect](public/img/screenshots/home.jpg)
 
 ### Block Details
-# ![Connect](public/img/screenshots/block.png)
+# ![Connect](public/img/screenshots/block.jpg)
 
 ### Transaction Details
-# ![Connect](public/img/screenshots/transaction.png)
+# ![Connect](public/img/screenshots/transaction.jpg)
 
 ### Transaction, Raw JSON
-# ![Connect](public/img/screenshots/transaction-raw.png)
+# ![Connect](public/img/screenshots/transaction-raw.jpg)
 
 ### List of Blocks by height (in ascending order)
-# ![Connect](public/img/screenshots/blocks.png)
+# ![Connect](public/img/screenshots/blocks.jpg)
