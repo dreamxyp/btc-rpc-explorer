@@ -8,7 +8,7 @@ block content
 	hr
 
 	if (getmempoolinfo)
-		p Data from RPC command  
+		//p Data from RPC command
 			a(href="https://bitcoin.org/en/developer-reference#getmempoolinfo") getmempoolinfo
 			
 		table(class="table")
@@ -63,12 +63,12 @@ block content
 
 		canvas(id="mempoolBarChart", height="150")
 
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js")
+		script(src="/libs/chart.bundle.min.js")
 
 		script var feeBucketLabels = [];
 		each feeBucketLabel, index in feeBucketLabels
 			- var percentTx = Math.round(100 * feeBucketTxCounts[index] / getmempoolinfo.size).toLocaleString();
-			script feeBucketLabels.push(["#{feeBucketLabel}","#{feeBucketTxCounts[index]} tx (#{percentTx}%)","#{totalfeeBuckets[index].toLocaleString()} BTC"]);
+			script feeBucketLabels.push(["#{feeBucketLabel}","#{feeBucketTxCounts[index]} tx (#{percentTx}%)","#{totalfeeBuckets[index].toLocaleString()} HUC"]);
 
 		script var feeBucketTxCounts = [#{feeBucketTxCounts}];
 

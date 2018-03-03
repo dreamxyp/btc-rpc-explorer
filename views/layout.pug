@@ -4,10 +4,10 @@ html
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no")
 		
-		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
-		link(rel="stylesheet", href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Cousine")
-		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css")
+		link(rel="stylesheet", href="/libs/bootstrap.min.css")
+		link(rel="stylesheet", href="/libs/font-awesome.min.css")
+		link(rel="stylesheet", href="/libs/fonts-css.css")
+		link(rel="stylesheet", href="/libs/highlight.js-default.min.css")
 		link(rel='stylesheet', href='/css/styling.css')
 
 		link(rel="icon", type="image/png", sizes="32x32", href="/img/favicons/favicon-32x32.png")
@@ -15,7 +15,7 @@ html
 		link(rel="icon", type="image/png", sizes="16x16", href="/img/favicons/favicon-16x16.png")
 
 		block headContent
-			title BTC Explorer
+			title HUC Explorer
 		
 	body
 		nav(class="navbar navbar-expand-lg navbar-dark bg-dark mb-4")
@@ -23,7 +23,7 @@ html
 				a(class="navbar-brand", href="/")
 					span
 						img(src="/img/logo/logo-64.png", class="header-image")
-						span BTC Explorer
+						span HUC Explorer
 						
 				button(type="button", class="navbar-toggler navbar-toggler-right", data-toggle="collapse", data-target="#navbarNav")
 					span(class="navbar-toggler-icon")
@@ -53,18 +53,15 @@ html
 
 			div(style="margin-bottom: 30px;")
 
-		div(class="d-none d-md-block")
-			a(href="https://github.com/janoside/btc-rpc-explorer")
-				img(style="position: absolute; top: 0; left: 0; border: 0;", src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67", alt="Fork me on GitHub", data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png")
-		
-		script(src="https://code.jquery.com/jquery-3.2.1.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin="anonymous")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js", integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", crossorigin="anonymous")
-		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
 
-		script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
+		script(src="/libs/jquery-3.2.1.min.js",  crossorigin="anonymous")
+		script(src="/libs/popper.min.js", crossorigin="anonymous")
+		script(src="/libs/tether.min.js", crossorigin="anonymous")
+		script(src="/libs/bootstrap.min.js", crossorigin="anonymous")
+
+		script(src="/libs/highlight.min.js")
 		
-		script(src="https://cdn.ravenjs.com/3.22.4/raven.min.js", crossorigin="anonymous")
+		script(src="/libs/raven.min.js", crossorigin="anonymous")
 		script.
 			Raven.config('https://0bf20e8357a748cab8aa9d35c0f790dd@sentry.io/130800').install();
 			

@@ -1,14 +1,14 @@
 extends layout
 
 block headContent
-	title Home
+	title HappyUC Blockchain Explorer - Home
 	
 block content
-	h1 BTC Explorer
+	h1 HappyUC Blockchain Explorer
 	hr
 
 	:markdown-it
-		**BTC Explorer** is [open-source](https://github.com/janoside/btc-rpc-explorer). If you run your own [Bitcoin Full Node](https://bitcoin.org/en/full-node), **BTC Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/janoside/btc-rpc-explorer) for a list of features and instructions for running.
+		**HUC Explorer** is [open-source](https://github.com/dreamxyp/happyuc-explorer). If you run your own [HappyUC Full Node](https://HappyUC.org/), **HUC Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/dreamxyp/happyuc-explorer) for a list of features and instructions for running.
 
 	
 	if (latestBlocks)
@@ -30,18 +30,11 @@ block content
 	div(class="")
 		ul
 			li MIT-licensed source code available on github: 
-				a(href="https://github.com/janoside/btc-rpc-explorer") janoside/btc-rpc-explorer
-				if (sourcecodeVersion)
-					span  (@
-					a(href=("https://github.com/janoside/btc-rpc-explorer/commit/" + sourcecodeVersion)) #{sourcecodeVersion}
-					span )
+				a(href="https://github.com/dreamxyp/happyuc-explorer") dreamxyp/happyuc-explorer
 
 			li Public instance maintained at 
-				a(href="https://btc-explorer.com") https://btc-explorer.com
+				a(href="https://happyuc-explorer.007.li") https://happyuc-explorer.007.li
 			
 			li Donate: 
-				a(href="bitcoin:3NPGpNyLLmVKCEcuipBs7G4KpQJoJXjDGe") BTC
-				span  - 3NPGpNyLLmVKCEcuipBs7G4KpQJoJXjDGe
-
-			li &copy; 2018 
-				a(href="https://danjanosik.com") Dan Janosik
+				a(href="happyuc:Um9jdDMCq2qxrML8vn1RGHnnbtV2V8Mu92") HUC
+				span  - Um9jdDMCq2qxrML8vn1RGHnnbtV2V8Mu92

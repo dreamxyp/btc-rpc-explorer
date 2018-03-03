@@ -1,25 +1,22 @@
 #!/usr/bin/env node
 
 'use strict';
-
 var express = require('express');
-var path = require('path');
+var path    = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+var logger  = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var session = require("express-session");
-var env = require("./app/env.js");
+var bodyParser   = require('body-parser');
+var session      = require("express-session");
+var env          = require("./app/env.js");
 var simpleGit = require('simple-git');
-var utils = require("./app/utils.js");
-var moment = require("moment");
-var Decimal = require('decimal.js');
-var bitcoin = require("bitcoin");
-var pug = require("pug");
+var utils     = require("./app/utils.js");
+var moment    = require("moment");
+var Decimal   = require('decimal.js');
+var bitcoin   = require("bitcoin");
+var pug       = require("pug");
 var momentDurationFormat = require("moment-duration-format");
-
-
-var baseActionsRouter = require('./routes/baseActionsRouter');
+var baseActionsRouter    = require('./routes/baseActionsRouter');
 
 var app = express();
 
@@ -46,8 +43,6 @@ app.use(session({
 	saveUninitialized: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 app.locals.sourcecodeVersion = null;
 
 app.use(function(req, res, next) {
@@ -137,9 +132,9 @@ app.use(function(err, req, res, next) {
 	});
 });
 
-app.locals.moment = moment;
+app.locals.moment  = moment;
 app.locals.Decimal = Decimal;
-app.locals.utils = utils;
+app.locals.utils   = utils;
 
 
 

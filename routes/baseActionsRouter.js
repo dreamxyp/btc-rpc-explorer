@@ -1,14 +1,15 @@
 var express = require('express');
-var router = express.Router();
-var util = require('util');
-var moment = require('moment');
-var utils = require('./../app/utils');
-var env = require("./../app/env");
+var router  = express.Router();
+var util    = require('util');
+var moment  = require('moment');
+var utils   = require('./../app/utils');
+var env     = require("./../app/env");
 var bitcoin = require("bitcoin");
-var rpcApi = require("./../app/rpcApi");
+var rpcApi  = require("./../app/rpcApi");
 
 router.get("/", function(req, res) {
-	if (!req.session.host) {
+	if (!req.session.host)
+	{
 		if (req.cookies['rpc-host']) {
 			res.locals.host = req.cookies['rpc-host'];
 		}
@@ -45,7 +46,7 @@ router.get("/", function(req, res) {
 			res.render("index");
 		});
 	}).catch(function(err) {
-		res.locals.userMessage = "Unable to connect to Bitcoin Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
+		res.locals.userMessage = "Unable to connect to HappyUC Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
 
 		res.render("index");
 	});
@@ -54,7 +55,8 @@ router.get("/", function(req, res) {
 router.get("/node-info", function(req, res) {
 	var client = global.client;
 
-	rpcApi.getBlockchainInfo().then(function(getblockchaininfo) {
+	rpcApi.getBlockchainInfo().then(function(getblockchaininfo)
+	{
 		res.locals.getblockchaininfo = getblockchaininfo;
 
 		rpcApi.getNetworkInfo().then(function(getnetworkinfo) {
@@ -63,20 +65,25 @@ router.get("/node-info", function(req, res) {
 			rpcApi.getUptimeSeconds().then(function(uptimeSeconds) {
 				res.locals.uptimeSeconds = uptimeSeconds;
 
+				console.log({
+                    "getblockchaininfo":res.locals.getblockchaininfo,
+                    "getnetworkinfo":res.locals.uptimeSeconds,
+                    "uptimeSeconds":res.locals.uptimeSeconds
+                });
 				res.render("node-info");
 
 			}).catch(function(err) {
-				res.locals.userMessage = "Unable to connect to Bitcoin Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
+				res.locals.userMessage = "Unable to connect to HappyUC Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
 
 				res.render("node-info");
 			});
 		}).catch(function(err) {
-			res.locals.userMessage = "Unable to connect to Bitcoin Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
+			res.locals.userMessage = "Unable to connect to HappyUC Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
 
 			res.render("node-info");
 		});
 	}).catch(function(err) {
-		res.locals.userMessage = "Unable to connect to Bitcoin Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
+		res.locals.userMessage = "Unable to connect to HappyUC Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
 
 		res.render("node-info");
 	});
@@ -94,7 +101,7 @@ router.get("/mempool", function(req, res) {
 			res.render("mempool");
 		});
 	}).catch(function(err) {
-		res.locals.userMessage = "Unable to connect to Bitcoin Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
+		res.locals.userMessage = "Unable to connect to HappyUC Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
 
 		res.render("mempool");
 	});
@@ -175,7 +182,7 @@ router.get("/blocks", function(req, res) {
 			res.render("blocks");
 		});
 	}).catch(function(err) {
-		res.locals.userMessage = "Unable to connect to Bitcoin Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
+		res.locals.userMessage = "Unable to connect to HappyUC Node at " + env.bitcoind.host + ":" + env.bitcoind.port;
 
 		res.render("blocks");
 	});
@@ -295,7 +302,6 @@ router.get("/block-height/:blockHeight", function(req, res) {
 			res.locals.result.getblock = result.getblock;
 			res.locals.result.transactions = result.transactions;
 			res.locals.result.txInputsByTransaction = result.txInputsByTransaction;
-
 			res.render("block-height");
 		});
 	});
@@ -319,14 +325,14 @@ router.get("/block/:blockHash", function(req, res) {
 		offset = parseInt(req.query.offset);
 	}
 
-	res.locals.limit = limit;
+	res.locals.limit  = limit;
 	res.locals.offset = offset;
 	res.locals.paginationBaseUrl = "/block/" + blockHash;
 
 	// TODO handle RPC error
 	rpcApi.getBlockData(client, blockHash, limit, offset).then(function(result) {
-		res.locals.result.getblock = result.getblock;
-		res.locals.result.transactions = result.transactions;
+		res.locals.result.getblock              = result.getblock;
+		res.locals.result.transactions          = result.transactions;
 		res.locals.result.txInputsByTransaction = result.txInputsByTransaction;
 
 		res.render("block");

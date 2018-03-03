@@ -8,7 +8,7 @@ block content
 	hr
 
 	if (getblockchaininfo)
-		p Data from RPC commands 
+		//p Data from RPC commands
 			a(href="https://bitcoin.org/en/developer-reference#getblockchaininfo") getblockchaininfo
 			span  and 
 			a(href="https://bitcoin.org/en/developer-reference#getnetworkinfo") getnetworkinfo
@@ -66,7 +66,9 @@ block content
 
 				tr
 					th(class="table-active properties-header") Blockchain Size on Disk
-					td(class="monospace") #{getblockchaininfo.size_on_disk.toLocaleString()}
+					td(class="monospace")
+						if (getblockchaininfo.size_on_disk)
+							#{getblockchaininfo.size_on_disk.toLocaleString()}
 						span  (pruned: #{getblockchaininfo.pruned})
 
 				tr

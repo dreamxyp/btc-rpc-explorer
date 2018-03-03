@@ -1,5 +1,5 @@
-var Decimal = require("decimal.js");
-Decimal8 = Decimal.clone({ precision:8, rounding:8 });
+var Decimal  = require("decimal.js");
+    Decimal8 = Decimal.clone({ precision:8, rounding:8 });
 
 function doSmartRedirect(req, res, defaultUrl) {
 	if (req.session.redirectUrl) {

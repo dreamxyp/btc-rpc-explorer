@@ -1,4 +1,4 @@
-### Setup of https://btc-explorer.com on Ubuntu 16.04
+### Setup of https://happyuc-explorer.007.li on Ubuntu 16.04
 
     apt update
     apt upgrade
@@ -10,13 +10,13 @@
     apt upgrade
     apt install python-certbot-nginx
     
-Copy content from [./btc-explorer.com.conf](./btc-explorer.com.conf) into `/etc/nginx/sites-available/btc-explorer.com.conf`
+Copy content from [./happyuc-explorer.007.li.conf](./happyuc-explorer.007.li.conf) into `/etc/nginx/sites/happyuc-explorer.007.li.conf`
 
-    certbot --nginx -d btc-explorer.com
+    certbot --nginx -d happyuc-explorer.007.li
     cd /etc/ssl/certs
     openssl dhparam -out dhparam.pem 4096
-    cd /home/bitcoin
-    git clone https://github.com/janoside/btc-rpc-explorer.git
-    cd /home/bitcoin/btc-rpc-explorer
+    cd /home/happyuc
+    git clone https://github.com/dreamxyp/happyuc-explorer.git
+    cd /home/happyuc/happyuc-explorer
     npm install
-    pm2 start bin/www --name "btc-rpc-explorer"
+    pm2 start bin/www --name "happyuc-explorer"
